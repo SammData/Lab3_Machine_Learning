@@ -127,14 +127,14 @@ reg.fit(train_x, train_y)
 
 # %%
 print("Training Set Performance")
-print(evaluate(clf, test_x, test_y))
+print(evaluate(reg, train_x, train_y))
 
 # %%
-truth = pd.read_csv("truth_house_price.csv")
+truth = pd.read_csv("truth_house_prices.csv")
 test_x = test[selected_columns]
 test_y = truth["SalePrice"]
 
 test_x = ct.transform(test_x)
 
 print("Test Set Performance")
-print(evaluate(clf, test_x, test_y))
+print(evaluate(reg, test_x, test_y))
